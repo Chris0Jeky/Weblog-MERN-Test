@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import ApiTest from './ApiTest';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         >
           Learn React
         </a>
+        <ApiTest />
       </header>
     </div>
   );
