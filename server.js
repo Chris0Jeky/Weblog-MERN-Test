@@ -4,8 +4,12 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const mongoose = require('mongoose');
-
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://kali:kali@clustertest.bziibod.mongodb.net/?retryWrites=true&w=majority';
+
+
+const User = require('./models/User');
+const Resource = require('./models/Resource');
+
 
 mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
@@ -22,7 +26,6 @@ mongoose.connection.on('error', (err) => {
     console.error('Error connecting to MongoDB:', err);
 });
 
-const User = require('./models/User');
 
 app.get('/api/users', async (req, res) => {
     try {
@@ -34,6 +37,31 @@ app.get('/api/users', async (req, res) => {
 });
 
 // Add other routes for creating, updating, and deleting data
+
+// Get all resources
+app.get('/api/resources', async (req, res) => {
+    try {
+        const resources = await Resource.find();
+        res.json(resources);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+// Add a new resource
+app.post('/api/resources', async (req, res) => {
+    // Handle resource creation here
+});
+
+// Update a resource
+app.put('/api/resources/:id', async (req, res) => {
+    // Handle resource updates here
+});
+
+// Delete a resource
+app.delete('/api/resources/:id', async (req, res) => {
+    // Handle resource deletion here
+});
 
 
 // Middleware for parsing JSON requests
