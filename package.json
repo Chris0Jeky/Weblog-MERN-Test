@@ -1,0 +1,22 @@
+{
+  "name": "weblog-mern-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chris0Jeky/Weblog-MERN-Test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chris0Jeky/Weblog-MERN-Test/issues"
+  },
+  "homepage": "https://github.com/Chris0Jeky/Weblog-MERN-Test#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
